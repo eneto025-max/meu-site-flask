@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Conta criada - Banco Python</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1>✅ Conta criada!</h1>
+
+        <h2>Bem-vindo ao Banco Python, {{ nome }}!</h2>
+
+        <p>
+            Sua conta foi criada com sucesso.
+        </p>
+
+        <p>
+            Agora você já pode acessar sua conta e começar a usar o Banco Python.
+        </p>
+
+        <br>
+
+        <a href="/login">
+            <button>Entrar na minha conta</button>
+        </a>
+
+        <br><br>
+
+        <a href="/">
+            Voltar para o início
+        </a>
+
+    </div>
+
+</body>
+
+</html>

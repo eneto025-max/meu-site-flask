@@ -55,7 +55,10 @@ def cadastro():
         banco.commit()
         banco.close()
 
-        return "Conta criada com sucesso!"
+        return render_template(
+            "sucesso.html",
+            nome=nome
+        )
 
     return render_template("cadastro.html")
 
@@ -346,6 +349,26 @@ def conta():
         "conta.html",
         nome=usuario[0],
         saldo=usuario[1]
+    )
+
+
+@app.route("/admin")
+def admin():
+
+    banco = conectar()
+    cursor = banco.cursor()
+
+    cursor.execute(
+        "SELECT id, nome, saldo FROM contas"
+    )
+
+    contas = cursor.fetchall()
+
+    banco.close()
+
+    return render_template(
+        "admin.html",
+        contas=contas
     )
 
 

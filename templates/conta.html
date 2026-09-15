@@ -9,41 +9,78 @@
 
 <body>
 
-    <div class="card">
+    <div class="bank-container">
 
-        <h1>🏦 Banco Python</h1>
+        <header class="top-bar">
 
-        <h2>Olá, {{ nome }}! 👋</h2>
+            <div class="logo">
+                🏦 Banco Python
+            </div>
 
-        <p>Bem-vindo à sua conta.</p>
+            <a href="/logout" class="logout">
+                Sair
+            </a>
 
-        <h2>Saldo</h2>
+        </header>
 
-        <p>R$ {{ "%.2f"|format(saldo) }}</p>
 
-        <a href="/deposito">
-            <button>Depositar</button>
-        </a>
+        <main>
 
-        <a href="/saque">
-            <button>Sacar</button>
-        </a>
+            <p class="welcome">Olá, {{ nome }} 👋</p>
 
-        <br><br>
+            <h1 class="account-title">Minha conta</h1>
 
-        <a href="/transferencia">
-            <button>Transferir</button>
-        </a>
 
-        <a href="/historico">
-            <button>Histórico</button>
-        </a>
+            <div class="balance-card">
 
-        <br><br>
+                <p class="balance-label">
+                    SALDO DISPONÍVEL
+                </p>
 
-        <a href="/logout">
-            <button>Sair</button>
-        </a>
+                <h2>
+                    R$ {{ "%.2f"|format(saldo) }}
+                </h2>
+
+            </div>
+
+
+            <h3 class="section-title">
+                Movimentações
+            </h3>
+
+
+            <div class="actions">
+
+                <a href="/deposito" class="action-card">
+                    <span class="action-icon">💰</span>
+                    <strong>Depositar</strong>
+                    <small>Adicionar dinheiro</small>
+                </a>
+
+
+                <a href="/saque" class="action-card">
+                    <span class="action-icon">💸</span>
+                    <strong>Sacar</strong>
+                    <small>Retirar dinheiro</small>
+                </a>
+
+
+                <a href="/transferencia" class="action-card">
+                    <span class="action-icon">↔️</span>
+                    <strong>Transferir</strong>
+                    <small>Enviar dinheiro</small>
+                </a>
+
+
+                <a href="/historico" class="action-card">
+                    <span class="action-icon">📜</span>
+                    <strong>Histórico</strong>
+                    <small>Ver movimentações</small>
+                </a>
+
+            </div>
+
+        </main>
 
     </div>
 

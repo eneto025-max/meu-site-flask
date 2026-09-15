@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Banco Python</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1>🏦 Painel Administrativo</h1>
+
+        <h2>Contas cadastradas</h2>
+
+        {% for conta in contas %}
+
+            <div>
+                <p>
+                    <strong>ID:</strong> {{ conta[0] }}
+                </p>
+
+                <p>
+                    <strong>Nome:</strong> {{ conta[1] }}
+                </p>
+
+                <p>
+                    <strong>Saldo:</strong>
+                    R$ {{ "%.2f"|format(conta[2]) }}
+                </p>
+
+                <hr>
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</body>
+
+</html>
