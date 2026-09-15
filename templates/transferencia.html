@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Transferência - Banco Python</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1>💸 Transferir dinheiro</h1>
+        
+        {% if erro %}
+            <p>{{ erro }}</p>
+        {% endif %}
+
+        <p>Digite os dados da transferência:</p>
+
+        <form method="POST">
+
+            <input
+                type="text"
+                name="destinatario"
+                placeholder="Nome do destinatário"
+                required
+            >
+
+            <br><br>
+
+            <input
+                type="number"
+                name="valor"
+                step="0.01"
+                min="0.01"
+                placeholder="Valor"
+                required
+            >
+
+            <br><br>
+
+            <button type="submit">Transferir</button>
+
+        </form>
+
+        <br>
+
+        <a href="/conta">Voltar para minha conta</a>
+
+    </div>
+
+</body>
+
+</html>

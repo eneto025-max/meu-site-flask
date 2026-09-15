@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Histórico - Banco Python</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1>📜 Histórico</h1>
+
+        {% if movimentacoes %}
+
+            {% for movimento in movimentacoes %}
+
+                <div>
+                    <p>
+                        <strong>{{ movimento[0] }}</strong>
+                    </p>
+
+                    <p>
+                        R$ {{ "%.2f"|format(movimento[1]) }}
+                    </p>
+
+                    <p>
+                        {{ movimento[2] }}
+                    </p>
+
+                    <hr>
+
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p>Nenhuma movimentação encontrada.</p>
+
+        {% endif %}
+
+        <br>
+
+        <a href="/conta">
+            <button>Voltar para minha conta</button>
+        </a>
+
+    </div>
+
+</body>
+
+</html>

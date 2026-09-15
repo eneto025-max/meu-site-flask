@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Depósito - Banco Python</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1>💰 Fazer depósito</h1>
+
+        <p>Digite o valor que deseja depositar:</p>
+
+        <form method="POST">
+
+            <input
+                type="number"
+                name="valor"
+                step="0.01"
+                min="0.01"
+                placeholder="Ex: 100.00"
+                required
+            >
+
+            <br><br>
+
+            <button type="submit">Depositar</button>
+
+        </form>
+
+        <br>
+
+        <a href="/conta">Voltar para minha conta</a>
+
+    </div>
+
+</body>
+
+</html>

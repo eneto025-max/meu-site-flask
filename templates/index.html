@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Meu Site</title>
-
+    <title>Banco Python</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
@@ -12,21 +11,18 @@
 
     <div class="card">
 
-         <h1>Meu primeiro site</h1>
+        <h1>🏦 Banco Python</h1>
 
-         <p>Digite seu nome:</p>
+        <p>Bem-vindo ao Banco Python!</p>
+     
+        <a href="/login">
+            <button>Entrar</button>
+        </a>
 
-         <form method="POST">
+        <a href="/cadastro">
+            <button>Criar conta</button>
+        </a>
 
-             <input type="text" name="nome" placeholder="Digite seu nome">
-
-             <button type="submit">Enviar</button>
-
-         </form>
-
-        {% if nome %}
-            <h2>Olá, {{ nome }}! Seja bem-vindo! 👋</h2>
-        {% endif %}
     </div>
 
 </body>
